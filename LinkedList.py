@@ -88,7 +88,7 @@ class LinkedList(object):
         counter = 0
         if position > 0:
             while current and counter < position:
-                if counter == position - 1:
+                if counter == position:
                     current.value = new_item
                 current = current.next
                 counter+=1
@@ -117,7 +117,7 @@ llist.getItemAtPosition(6)
 
 # Update Item value
 llist.updateItem(6,55)
-llist.printList
+llist.printList()
 
 # Delete item at specified position
 llist.deleteItemAtPosition(6)
