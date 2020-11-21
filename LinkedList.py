@@ -1,16 +1,19 @@
+# Linked List python implementation
+# Node Class
 class Node(object):
+    # Initialize node with value
     def __init__(self, value):
         self.value = value
         self.next = None
 
+# Linked List Class
 class LinkedList(object):
+    #Initialize with a head node
     def __init__(self, head=None):
         self.head = head
 
+    # function to display the linked list on standard output
     def printList(self):
-        """
-            function to display the linked list on standard output
-        """
         current = self.head
         if self.head:
             while current.next:
@@ -20,10 +23,8 @@ class LinkedList(object):
         else:
             print(str(current.value) + " --> " + str(current.next))
 
+    # function to display the item at a given position
     def getItemAtPosition(self, position):
-        """
-            function to display the item at a given position
-        """
         current = self.head
         if position > 0:
             for i in range(position+1):
@@ -33,10 +34,8 @@ class LinkedList(object):
         elif position == 0:
             print(current.value)
 
+    # function to append an item to the end of the linked list
     def append(self, new_item):
-        """
-            function to append an item to the end of the linked list
-        """
         current = self.head
         if self.head:
             while current.next:
@@ -45,10 +44,8 @@ class LinkedList(object):
         else:
             self.head = new_item
 
+    # function to insert an item at a given position in the linked list
     def insert(self, item, position):
-        """
-            function to insert an item at a given position in the linked list
-        """
         current = self.head
         counter = 0
         if position > 0:
@@ -62,10 +59,8 @@ class LinkedList(object):
             item.next = self.head
             self.head = item
     
+    # function to delete an item at a given position in the linked list
     def deleteItemAtPosition(self, position):
-        """
-            function to delete an item at a given position in the linked list
-        """
         current = self.head
         previous = None
         if position > 0:
@@ -80,10 +75,8 @@ class LinkedList(object):
         elif position == 0:
             self.head = current.next
     
+    # function to update an item at a given position in the linked list
     def updateItem(self, position, new_item):
-        """
-            function to update an item at a given position in the linked list
-        """
         current = self.head
         counter = 0
         if position > 0:
