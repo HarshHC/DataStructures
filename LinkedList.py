@@ -79,6 +79,21 @@ class LinkedList(object):
                 current = current.next
         elif position == 0:
             self.head = current.next
+    
+    def updateItem(self, position, new_item):
+        """
+            function to update an item at a given position in the linked list
+        """
+        current = self.head
+        counter = 0
+        if position > 0:
+            while current and counter < position:
+                if counter == position - 1:
+                    current.value = new_item
+                current = current.next
+                counter+=1
+        elif position == 0:
+            current.value = new_item
 
 # Create Linked List
 llist = LinkedList(Node('start'))
@@ -94,11 +109,15 @@ llist.append(Node(5))
 llist.insert(Node(555),6)
 llist.append(Node('end'))
 
-# Print List
+# Print list
 llist.printList()
 
 # Print item value at specified position
 llist.getItemAtPosition(6)
+
+# Update Item value
+llist.updateItem(6,55)
+llist.printList
 
 # Delete item at specified position
 llist.deleteItemAtPosition(6)
